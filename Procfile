@@ -1,1 +1,1 @@
-web: python3 wsgi.py --log-file -
+web: python3 bitclout.py --log-file -
