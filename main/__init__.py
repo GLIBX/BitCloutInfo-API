@@ -1,6 +1,7 @@
 from flask import Flask, Blueprint
 from flask_restful import Api
 from .routes import *
+from flask_cors import CORS
 
 
 api_bp = Blueprint('api', __name__)
@@ -25,6 +26,7 @@ api.add_resource(BitcloutPrice, '/get-bitclout-price') #GET
 
 def create_app():
     app = Flask(__name__)
+    cors = CORS(app)
     app.register_blueprint(api_bp)
     return app
     
