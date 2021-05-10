@@ -19,6 +19,9 @@ api.add_resource(Profiles, '/get-profiles')
 api.add_resource(Users, '/get-users')
 api.add_resource(Transactions, '/get-transactions')
 
+api.add_resource(VerifiedUsers, '/get-verified-users')
+api.add_resource(BitcloutPrice, '/get-bitclout-price') #GET
+
 
 def create_app():
     app = Flask(__name__)
