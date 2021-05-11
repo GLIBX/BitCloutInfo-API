@@ -149,6 +149,6 @@ class BitcloutPrice(Resource):
             price = data['data']['bitclout_price']['bitclout_bitcoin_exchange_rate'] * data['data']['bitclout_price']['bitcoin_usd_exchange_rate']
 
             response = {
-                'bitclout_price': float(price)
+                'bitclout_price': round(price, 2)
             }
             return make_response(response)
