@@ -9,7 +9,7 @@ scraper = cloudscraper.create_scraper()
 
 class Base(Resource):
     def get(self):
-        res = scraper.get('https://api.bitcloutbarbies.com/api/v1').text
+        res = scraper.get('https://api.bitclout.com/api/v1').text
         response = json.loads(res)
         return make_response(response)
 
@@ -18,7 +18,7 @@ class AppState(Resource):
     def post(self):
         payload = request.get_json()
         res = scraper.post(
-            'https://api.bitcloutbarbies.com/get-app-state', json=payload)
+            'https://api.bitclout.com/get-app-state', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)
@@ -26,7 +26,7 @@ class AppState(Resource):
 
 class ExchangeRate(Resource):
     def get(self):
-        res = scraper.get('https://api.bitcloutbarbies.com/get-exchange-rate')
+        res = scraper.get('https://api.bitclout.com/get-exchange-rate')
 
         response = json.loads(res.text)
         return make_response(response)
@@ -35,7 +35,7 @@ class ExchangeRate(Resource):
 class Follows(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/get-follows-stateless', json=payload)
+        res = scraper.post('https://api.bitclout.com/get-follows-stateless', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)   
@@ -43,7 +43,7 @@ class Follows(Resource):
 class Messages(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/get-messages-stateless', json=payload)
+        res = scraper.post('https://api.bitclout.com/get-messages-stateless', json=payload)
 
         response = json.loads(res.text)
         return make_response(response) 
@@ -52,7 +52,7 @@ class Messages(Resource):
 class Notifications(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/get-notifications', json=payload)
+        res = scraper.post('https://api.bitclout.com/get-notifications', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)  
@@ -60,7 +60,7 @@ class Notifications(Resource):
 class Posts(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/get-posts-stateless', json=payload)
+        res = scraper.post('https://api.bitclout.com/get-posts-stateless', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)
@@ -69,7 +69,7 @@ class Posts(Resource):
 class Profiles(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/get-profiles', json=payload)
+        res = scraper.post('https://api.bitclout.com/get-profiles', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)
@@ -78,7 +78,7 @@ class Profiles(Resource):
 class Users(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/get-users-stateless', json=payload)
+        res = scraper.post('https://api.bitclout.com/get-users-stateless', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)
@@ -92,7 +92,7 @@ class Transactions(Resource):
         #     'PublicKeyBase58Check': '',
         #     'IsMempool': True
         # }
-        res = scraper.post('https://api.bitcloutbarbies.com/api/v1/transaction-info', json=payload)
+        res = scraper.post('https://api.bitclout.com/api/v1/transaction-info', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)
@@ -106,7 +106,7 @@ class Blocks(Resource):
         #     'PublicKeyBase58Check': '',
         #     'IsMempool': True
         # }
-        res = scraper.post('https://api.bitcloutbarbies.com/api/v1/block', json=payload)
+        res = scraper.post('https://api.bitclout.com/api/v1/block', json=payload)
 
         if res.status_code != 200:
             response = {
@@ -122,7 +122,7 @@ class Blocks(Resource):
 class VerifiedUsers(Resource):
     def post(self):
         payload = request.get_json()
-        res = scraper.post('https://api.bitcloutbarbies.com/admin/get-verified-users', json=payload)
+        res = scraper.post('https://api.bitclout.com/admin/get-verified-users', json=payload)
 
         if res.status_code != 200:
             response = {
