@@ -9,7 +9,7 @@ scraper = cloudscraper.create_scraper()
 
 class Base(Resource):
     def get(self):
-        res = scraper.get('https://api.bitclout.com/api/v1').text
+        res = scraper.get('https://api.bitclout.com/api/v0').text
         response = json.loads(res)
         return make_response(response)
 
@@ -92,7 +92,7 @@ class Transactions(Resource):
         #     'PublicKeyBase58Check': '',
         #     'IsMempool': True
         # }
-        res = scraper.post('https://api.bitclout.com/api/v1/transaction-info', json=payload)
+        res = scraper.post('https://api.bitclout.com/api/v0/transaction-info', json=payload)
 
         response = json.loads(res.text)
         return make_response(response)
@@ -106,7 +106,7 @@ class Blocks(Resource):
         #     'PublicKeyBase58Check': '',
         #     'IsMempool': True
         # }
-        res = scraper.post('https://api.bitclout.com/api/v1/block', json=payload)
+        res = scraper.post('https://api.bitclout.com/api/v0/block', json=payload)
 
         if res.status_code != 200:
             response = {
