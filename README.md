@@ -1,54 +1,145 @@
 # BitCloutInfo API
 
+
+This is the official open-sourced API for the <a href="">MyBitcloutInfo</a> website as to be a dashboard for filter through and finding the best and most suitable sellers/ coinholders but updated reports on their total value and change over time, built on the BitClout project
+
+
+# API Documentation
+
 To get started in using this service tool, here are the endpoints and were they relay information from along with their respective parameters too.
 
 
 The Extension of the server url would be `/api/v1` followed by any of the following resources;
 
-`/` (GET REQUEST)
+## `/` (GET REQUEST)
 
 -   Base bitclout resource for all meta data
 
+## `/get-bitclout-price` (GET REQUEST ONLY)
 
-`/get-block` (POST REQUEST)
+- Returns the current price of bitclout price data
+
+
+## `/get-block` (POST REQUEST)
 
 -   Returns the bitclout blocks info
+params;
+1. PublicKeyBase58Check (String)
+2. IsMempool (Boolean) default `false`
 
-`/get-exchange-rate` (GET REQUEST)
+## `/get-exchange-rate` (GET REQUEST)
 
 -   Returns the current exchange rate
 
-`/get-app-state` (POST REQUEST)
+## `/get-app-state` (POST REQUEST)
 
 -   Returns the node current status
 
-`/get-follows` (POST REQUEST)
+## `/get-follows` (POST REQUEST)
 
 -   Returns the followed account (Not sure)
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
 
-`/get-messages` (POST REQUEST)
+## `/get-messages` (POST REQUEST)
 
 -   Returns messages data
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
 
-`/get-notifications` (POST REQUEST)
+## `/get-notifications` (POST REQUEST)
 
 -   Returns notifications data
 
-`/get-posts` (POST REQUEST)
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
+
+## `/get-posts` (POST REQUEST)
 
 - Returns all existing posts
 
-`/get-profiles` (POST REQUEST)
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
+
+## `/get-profiles` (POST REQUEST)
 
 - Returns all profile data
 
-`/get-users` (POST REQUEST)
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
+
+## `/get-users` (POST REQUEST)
 
 - Returns global users data
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
 
-`/get-transactions` (POST REQUEST)
+## `/get-transactions` (POST REQUEST)
 
 - Returns trnasactions data
 
-
-### ALL POST REQUIRE `PublicKeyBase58Check` & `IsMempool`(optional) AS PARAMETERS IN THE BODY OF YOUR REQUEST
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
