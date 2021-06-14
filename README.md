@@ -145,6 +145,23 @@ params;
 10. AddGlobalFeedBool (Boolean) default `false`
 
 
+## `/get-verified-users` (POST REQUEST)
+
+- Returns trnasactions data
+
+params;
+1. PublicKeyBase58Check (String)
+2. Username (String) or `null` to fetch all
+3. UsernamePrefix (String) or `null` to fetch all
+4. Description (String/null) or `null` to fetch all
+5. OrderBy (String)
+6. NumToFetch (Integer)
+7. ReaderPublicKeyBase58Check (String)
+8. ModerationType (String)
+9. FetchUsersThatHODL (Boolean) default `false`
+10. AddGlobalFeedBool (Boolean) default `false`
+
+
 <!-- CONTRIBUTING -->
 ## Contributing
 
